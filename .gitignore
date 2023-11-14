@@ -28,6 +28,7 @@ CMakeScripts/
 cmake_install.cmake
 CTestTestfile.cmake
 Makefile
+CMakeLists.txt
 
 # IDE-specific files
 .vscode/
@@ -39,3 +40,5 @@ Makefile
 *.sdf
 *.opensdf
 
+# gitignore file
+.gitignore
