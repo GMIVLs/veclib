@@ -1,0 +1,41 @@
+# Compiled Object files
+*.o
+*.os
+*.ko
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Source Files for cpp
+*.cpp
+*.c++
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Build directory
+build/
+bin/
+
+# CMake build directory
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+
+# IDE-specific files
+.vscode/
+.idea/
+*.suo
+*.sln
+*.user
+*.ncb
+*.sdf
+*.opensdf
+
