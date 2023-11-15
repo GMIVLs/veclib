@@ -2,7 +2,7 @@
  * @file vector.h
  *
  * Header file contain class vector,
- * which is a based class for the
+ * which is the based class for the
  * class vector2d contain basic math
  * for vector algebra in 2D.
  *
