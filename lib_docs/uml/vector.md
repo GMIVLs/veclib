@@ -5,5 +5,5 @@ In our project there is many class, one of them is ___vect class___ which is the
 #### Vect Class Diagram:
 _In figure below the UML of vect class:_
 
-![class::vector](../imag/vect_uml.png)
+![class::vector](../img/vect_uml.png)
 
