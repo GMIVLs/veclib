@@ -9,8 +9,8 @@
 *.pch
 
 # Source Files for cpp
-*.cpp
-*.c++
+#*.cpp
+#*.c++
 
 # Executables
 *.exe
@@ -28,7 +28,7 @@ CMakeScripts/
 cmake_install.cmake
 CTestTestfile.cmake
 Makefile
-CMakeLists.txt
+#CMakeLists.txt
 
 # IDE-specific files
 .vscode/
