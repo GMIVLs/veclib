@@ -64,6 +64,14 @@ namespace immutable
     vector2d divide(const vector2d&);
     vector2d divide(const Gtype&);
     Gtype dot(const vector2d&);
+    Gtype length(const vector2d&);
+    vector2d normaliz(const vector2d&);
+    bool is_normalized();
+    vector2d reflect(const vector2d&);
+    Gtype distance_to(const vector2d&);
+    void rotate(const double&);
+    vector2d projection(const vector2d&);
+    vector2d update(const double&, const double&);
 
    private:
     //! code here
