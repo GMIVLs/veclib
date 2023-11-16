@@ -2,39 +2,59 @@
  *
  * @file vector2d.h
  * this header file is contain basic
- * math algebra of vector in 2d,
+ * math algebra of vector in 2d space
  * which is part of the graphic engine
  * this file contain class named vector2d
  * will inherit the class vector from
  * the vector.h
  * it's templated type class can accept
- * various type of primitive data.
- *
+ * various type of primitive data, like
+ * integer, float, double.
  */
 
 #ifndef _VECTOR_2D_H_
 #define _VECTOR_2D_H_
-// the base class for the vector2d header file.
-#include "vector.h"
 
+#include "vector.h"
+//! the class vector2d contain namespace called immutable, which mean when used
+//! any method the return will be a new vector object not update the called
+//! object.
 namespace immutable
 {
 
-  //! using of templated type class
+  //! this the definition of templated type class which get Gtype data.
   template <class Gtype>
+  //! the class vector2d inherit from the base class vector
   class vector2d : public vector<Gtype>
-  {  // class immutable::vector2d inherit from class vector
+  {
    public:
-    //! this is vector2d class constructor definition
+    //! this is vector2d class default constructor definition.
     vector2d();
+    //! this is the vector2d class Gtype constructor definition.
     vector2d(Gtype, Gtype);
     //! this is vector2d class destructor definition
     ~vector2d();
-    // this is vector2d class copy constructor definition
+    //! this is vector2d class copy constructor definition
     vector2d(const vector2d&);
 
-    // this is class operators overload definition
+    //! this is operator+ overload definition
     vector2d operator+(vector2d&);
+    //! this is operator- overload definition
+    vector2d operator-(vector2d&);
+    //! this is the operator* overload definition
+    vector2d operator*(Gtype&);
+    //! this is the operator/ overload definition
+    vector2d operator/(Gtype&);
+    //! this is the operator+= overload definition
+    vector2d operator+=(vector2d&);
+    //! this is the operator-= overload definition
+    vector2d operator-=(vector2d&);
+    //! this is the operator*= overload definition
+    vector2d operator*=(Gtype&);
+    //! this is the operator/= overload definition
+    vector2d operator/=(Gtype&);
+    //! this is the operator() overload definition, which make using the object
+    //! call like a function.
     vector2d operator()(Gtype, Gtype);
 
     // this is class methods for vector 2D math
