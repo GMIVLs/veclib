@@ -17,6 +17,14 @@
 *.out
 *.app
 
+# Libray Files
+*.o
+*.a
+*.dll
+*.dylib
+*.so
+*.tex
+
 # Build directory
 build/
 bin/
