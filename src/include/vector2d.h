@@ -57,20 +57,33 @@ namespace immutable
     //! call like a function.
     vector2d operator()(Gtype, Gtype);
 
-    // this is class methods for vector 2D math
+    //! this is class method add definition
     vector2d add(const vector2d&);
+    //! this is class method sub definition
     vector2d sub(const vector2d&);
+    //! this is class method multi by scalier definition
     vector2d multi(const Gtype&);
+    //! this is class method divide of two vectors definition
     vector2d divide(const vector2d&);
+    //! this is the overload of method divide vector by scalier definition
     vector2d divide(const Gtype&);
+    //! this is the class dot product method definition
     Gtype dot(const vector2d&);
+    //! this is the class vector length method definition
     Gtype length(const vector2d&);
+    //! this is the class method to normalized the vector definition
     vector2d normaliz(const vector2d&);
+    //! this is the class vector normaliz test method definition
     bool is_normalized();
+    //! this is the class vector reflect method definition
     vector2d reflect(const vector2d&);
+    //! this is the class method distance to vector method definition
     Gtype distance_to(const vector2d&);
+    //! this is the class rotate of vector about angle method definition
     void rotate(const double&);
+    //! this is the class projection of vector method definition
     vector2d projection(const vector2d&);
+    //! this is the class vector position update method definition
     vector2d update(const double&, const double&);
 
    private:
