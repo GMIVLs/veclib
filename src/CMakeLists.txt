@@ -4,12 +4,12 @@
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Source files
-#set(SOURCES
-#    lib/vector.cpp
-#    lib/vector2d.cpp
-#)
+set(SOURCES
+    lib/vector.cpp
+    lib/vector2d.cpp
+)
 # find all the .cpp file within the src/lib directory
-file(GLOB_RECURSE SOURCES src/lib/*.cpp)
+#file(GLOB_RECURSE SOURCES src/*.cpp)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
