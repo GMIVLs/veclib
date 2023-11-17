@@ -49,4 +49,4 @@ Makefile
 *.opensdf
 
 # gitignore file
-.gitignore
+*.gitignore
