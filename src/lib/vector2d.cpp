@@ -63,28 +63,36 @@ namespace immutable
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator+=(vector2d<Gtype>& v)
   {
-    return vector2d<Gtype>(this->x + v.x, this->y + v.y);
+    this->x += v.x;
+    this->y += v.y;
+    return (*this);
   }
   //! this is the operator-= overload, which take object of type vector2d
   //! subtract it from (this) and return new vector2d
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator-=(vector2d<Gtype>& v)
   {
-    return vector2d<Gtype>(this->x - v.x, this->y - v.y);
+    this->x -= v.x;
+    this->y -= v.y;
+    return (*this);
   }
   //! this is the operator*= overload, which take var of type Gtype and return
   //! an object of vector2d
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator*=(Gtype& scalier)
   {
-    return vector2d<Gtype>(this->x * scalier, this->y * scalier);
+    this->x *= scalier;
+    this->y *= scalier;
+    return (*this);
   }
   //! this is the operator/= overload, which take var of type Gtype and return
   //! object of type vector2d
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator/=(Gtype& scalier)
   {
-    return vector2d<Gtype>(this->x / scalier, this->y / scalier);
+    this->x /= scalier;
+    this->y /= scalier;
+    return (*this);
   }
   //! this is the operator() overload, which will make the object created like a
   //! function and update the caller object (this)
