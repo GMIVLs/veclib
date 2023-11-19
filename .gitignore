@@ -49,4 +49,19 @@ Makefile
 *.opensdf
 
 # gitignore file
-*.gitignore
+o*.gitignore
+
+# Prerequisites
+*.d
+.DS_Store
+CMakefile.txt
+.clangd
+compile_commands.json
+.dir-locals.el
+.envrc
+*.pdf
+.cache/
+dependencies
+src/logs/
+docs/latex
+docs/html
