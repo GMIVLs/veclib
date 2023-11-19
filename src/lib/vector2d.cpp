@@ -1,5 +1,6 @@
 #include "vector2d.h"
 
+#include <cmath>
 #include <iostream>
 
 #include "vector.h"
@@ -139,8 +140,84 @@ namespace immutable
   {
     return (this->x * v.x + this->y * v.y);
   }
+  //! this is the method of find magnitude of vector in 2d space
+  template <class Gtype>
+  Gtype vector2d<Gtype>::length()
+  {
+    return sqrt(pow(this->x, 2) + pow(this->y, 2));
+  }
+  //! this is the method to find normal to the vector
+  template <class Gtype>
+  vector2d<Gtype> vector2d<Gtype>::normalize()
+  {
+    if (this->length() != 0)
+      {
+        this->x /= this->length();
+        this->y /= this->length();
+      }
+    else
+      {
+        this->x = 0;
+        this->y = 0;
+      }
+    return (*this);
+  }
+  //! this is the test method to evaluate the vector is normal or not
+  template <class Gtype>
+  bool vector2d<Gtype>::is_normalized()
+  {
+    if (this->length() == 1)
+      return true;
+
+    return false;
+  }
+  //! this is the method to find a vector reflection over a line represented by
+  //! another vector in 2d space
+  template <class Gtype>
+  vector2d<Gtype> vector2d<Gtype>::reflect(const vector2d<Gtype>& v)
+  {
+    vector2d<Gtype> vect{this->projection(v)};
+    return vector2d<Gtype>(vect.multi(2) - (*this));
+  }
+  //! this is the method to find the distance between a point(p1,p2) and vector
+  //! in 2d space
+  template <class Gtype>
+  Gtype vector2d<Gtype>::distance_to(const Gtype& x1, const Gtype& y1)
+  {
+    Gtype numerator =
+        std::abs((x1 - this->x) * this->y - (y1 - this->y) * this->x);
+    return (numerator / this->length());
+  }
+  //! this is the method to find the rotation of vector about an angle in vector
+  //! in 2d space
+  template <class Gtype>
+  void vector2d<Gtype>::rotate(const double& theta)
+  {
+    this->x = this->x * cos(theta) - this->y * sin(theta);
+    this->y = this->x * sin(theta) + this->y * cos(theta);
+  }
+  //! this is the method to find the projection of vector on a normal vector in
+  //! 2d space
+  template <class Gtype>
+  vector2d<Gtype> vector2d<Gtype>::projection(const vector2d<Gtype>& v)
+  {
+    this->x =
+        (this->dot(v) / (pow(v.get_x(), 2) + pow(v.get_y(), 2))) * v.get_x();
+    this->y =
+        (this->dot(v) / (pow(v.get_x(), 2) + pow(v.get_y(), 2))) * v.get_y();
+    return (*this);
+  }
+  //! this is the method to update the position of a vector in 2d space
+  template <class Gtype>
+  vector2d<Gtype> vector2d<Gtype>::update(const double& x1, const double& y1)
+  {
+    this->x = x1;
+    this->y = y1;
+    return (*this);
+  }
 }  // namespace immutable
-   //! this is the template class instantiation for various primitive data
+   //! this is the template class instantiation for various primitive data (int,
+   //! float, and double)
 template class immutable::vector2d<double>;
 template class immutable::vector2d<float>;
 template class immutable::vector2d<int>;
