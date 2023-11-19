@@ -65,3 +65,4 @@ dependencies
 src/logs/
 docs/latex
 docs/html
+.cache/clangd/index
