@@ -34,5 +34,5 @@ Follow these steps to build the static library using CMake:
     make
 4. You can use the library named (libvector2d.a) in your work.
 
-for details and information about the methods classes refere to the uml diagram and ([vector.md](https://github.com/GMVLIs/veclib/lib_docs/uml/vector.md), and [vector2d.md](https://github.com/GMVLIs/veclib/lib_docs/uml/vector2d.md) files.
+for details and information about the methods classes refere to the uml diagram and ([vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md)) files.
 
