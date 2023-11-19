@@ -60,7 +60,7 @@ compile_commands.json
 .dir-locals.el
 .envrc
 *.pdf
-.cache/
+.cache/*.*
 dependencies
 src/logs/
 docs/latex
