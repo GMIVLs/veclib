@@ -70,15 +70,15 @@ namespace immutable
     //! this is the class dot product method definition
     Gtype dot(const vector2d&);
     //! this is the class vector length method definition
-    Gtype length(const vector2d&);
+    Gtype length();
     //! this is the class method to normalized the vector definition
-    vector2d normaliz(const vector2d&);
+    vector2d normalize();
     //! this is the class vector normaliz test method definition
     bool is_normalized();
     //! this is the class vector reflect method definition
     vector2d reflect(const vector2d&);
     //! this is the class method distance to vector method definition
-    Gtype distance_to(const vector2d&);
+    Gtype distance_to(const Gtype&, const Gtype&);
     //! this is the class rotate of vector about angle method definition
     void rotate(const double&);
     //! this is the class projection of vector method definition
