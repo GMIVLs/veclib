@@ -9,7 +9,7 @@
 *.pch
 
 # Source Files for cpp
-#*.cpp
+main.cpp
 #*.c++
 
 # Executables
