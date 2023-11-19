@@ -1,0 +1,67 @@
+# Compiled Object files
+*.o
+*.os
+*.ko
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Source Files for cpp
+main.cpp
+#*.c++
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Libray Files
+*.o
+*.a
+*.dll
+*.dylib
+*.so
+*.tex
+
+# Build directory
+build/
+bin/
+
+# CMake build directory
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+#CMakeLists.txt
+
+# IDE-specific files
+.vscode/
+.idea/
+*.suo
+*.sln
+*.user
+*.ncb
+*.sdf
+*.opensdf
+
+# gitignore file
+o*.gitignore
+
+# Prerequisites
+*.d
+.DS_Store
+CMakefile.txt
+.clangd
+compile_commands.json
+.dir-locals.el
+.envrc
+*.pdf
+.cache/*.*
+dependencies
+src/logs/
+docs/latex
+docs/html
