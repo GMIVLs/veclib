@@ -29,26 +29,26 @@ Follow these steps to build the static library using CMake:
   
 a-1. Create a build directory inside the cloned repository:
    
-    ```sh
+    ```shell
     mkdir build
     cd build
-    ```
+
 a-2 Create the Makefile and required files for build the library
     
-    ```bash
+    ```shell
     cmake ..
     make
-    ```
+
 b-1 use the cmake to create and build the binary
     
-    ```bash
+    ```shell
     cmake -B build
-    ```
+
 b-2 use the cmake with Flags to build the binary
     
-    ```bash
+    ```shell
     cmake --build build -DCMAKE_BUILD_TYPE=release
-    ```
+
 3. You can use the library named (libvector2d.a) in your work.
 
 for details and information about the methods classes refere to the uml diagram and ([vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md)) files.
