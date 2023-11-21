@@ -24,24 +24,28 @@ Follow these steps to build the static library using CMake:
 1. Clone this repository:
     ```git
     git clone https://github.com/GMIVLs/veclib
-    ```
+
 2. there is two method to make the file:
   
 a-1. Create a build directory inside the cloned repository:
-   ```bash
-   mkdir build
-   cd build
+   
+    ```sh
+    mkdir build
+    cd build
     ```
 a-2 Create the Makefile and required files for build the library
+    
     ```bash
     cmake ..
     make
     ```
 b-1 use the cmake to create and build the binary
+    
     ```bash
     cmake -B build
     ```
 b-2 use the cmake with Flags to build the binary
+    
     ```bash
     cmake --build build -DCMAKE_BUILD_TYPE=release
     ```
