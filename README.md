@@ -27,27 +27,31 @@ Follow these steps to build the static library using CMake:
 
 2. there is two method to make the file:
   
-a-1. Create a build directory inside the cloned repository:
+    a-1. Create a build directory inside the cloned repository:
    
-    ```shell
+    ```
     mkdir build
     cd build
+    ```
 
-a-2 Create the Makefile and required files for build the library
+    a-2 Create the Makefile and required files for build the library
     
-    ```shell
+    ```
     cmake ..
     make
+    ```
 
-b-1 use the cmake to create and build the binary
+    b-1 use the cmake to create and build the binary
     
-    ```shell
+    ```
     cmake -B build
+    ```
 
-b-2 use the cmake with Flags to build the binary
+    b-2 use the cmake with Flags to build the binary
     
-    ```shell
+    ```
     cmake --build build -DCMAKE_BUILD_TYPE=release
+    ```
 
 3. You can use the library named (libvector2d.a) in your work.
 
