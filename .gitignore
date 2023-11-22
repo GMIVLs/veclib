@@ -63,6 +63,6 @@ compile_commands.json
 .cache/*.*
 dependencies
 src/logs/
-docs/latex
-docs/html
+lib_docs/latex
+lib_docs/html
 .cache/clangd/index

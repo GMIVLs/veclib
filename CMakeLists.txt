@@ -1,17 +1,26 @@
-cmake_minimum_required(VERSION 3.12)
-project(VecLib)
+# Define the required cmake version
+cmake_minimum_required(VERSION 3.20)
 
+# Project Name and Version
+project(Vector_librar VERSION 1.0.0
+                      DESCRIPTION "Basic Vector Algebra with cpp"
+                      LANGUAGES CXX)
 
-# Include directories
-include_directories(${CMAKE_SOURCE_DIR}/src/include)
+# Define the Library Name
+set(lib_name vector2d)
 
-# Set C++ standard
+# find all the .cpp file within the src/lib directory
+file(GLOB SOURCES src/lib/*.cpp)
 
+# Declare the -std=c++17
 set(CMAKE_CXX_STANDARD 17)
-
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Add subdirectory for the source code
-add_subdirectory(src)
+# Make the cmake create the json file
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# Create a static library from the source files
+add_library(${lib_name} STATIC ${SOURCES})
 
+# Specify the .h source director for the library
+target_include_directories(${lib_name} PRIVATE ${CMAKE_SOURCE_DIR}/src/include)
