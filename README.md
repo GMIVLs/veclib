@@ -1,6 +1,6 @@
 # 2D Vector Math Library
 
-This repository contains a simple C++ implementation of a 2D vector math library that provides functionalities and operators overload for basic vector operations in 2D space.
+This repository contains a simple C++ implementation of a 2D vector math library that provides functionalities and operators overload for basic vector operations in 2D space, and documentation files for these library.
 
 ## Features
 
@@ -53,7 +53,9 @@ Follow these steps to build the static library using CMake:
     cmake --build build -DCMAKE_BUILD_TYPE=release
     ```
 
-3. You can use the library named (libvector2d.a) in your work.
+3. You can use the library named (libvector2d.a) in your work, for details and information about the methods, classes, and operators overload refere to the uml diagram and ( [vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md) ) files.
 
-for details and information about the methods classes refere to the uml diagram and ([vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md)) files.
-
+4. Use the the ___dconfig___ file to generate the libray documents in the lib_docs directory:
+    ```
+    doxygen dconfig
+    ```
