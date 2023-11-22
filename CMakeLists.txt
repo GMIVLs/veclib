@@ -1,15 +1,16 @@
-# CMakeLists.txt in src directory
+# Define the required cmake version
+cmake_minimum_required(VERSION 3.20)
 
-# Include directories
-include_directories(${CMAKE_SOURCE_DIR}/include)
+# Project Name and Version
+project(Vector_librar VERSION 1.0.0
+                      DESCRIPTION "Basic Vector Algebra with cpp"
+                      LANGUAGES CXX)
 
-# Source files
-#set(SOURCES
-#    lib/vector.cpp
-#    lib/vector2d.cpp
-#)
+# Define the Library Name
+set(lib_name vector2d)
+
 # find all the .cpp file within the src/lib directory
-file(GLOB_RECURSE SOURCES lib/*.cpp)
+file(GLOB SOURCES src/lib/*.cpp)
 
 # Declare the -std=c++17
 set(CMAKE_CXX_STANDARD 17)
@@ -19,13 +20,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Create a static library from the source files
-add_library(vector2d STATIC ${SOURCES})
+add_library(${lib_name} STATIC ${SOURCES})
 
 # Specify the .h source director for the library
-target_include_directories(vector2d PUBLIC ${CMAKE_SOURCE_DIR}/include)
-
-# Create the executable and link with the static library
-add_executable(Vector main.cpp)
-
-# Link the binary file with the library .a
-target_link_libraries(Vector PRIVATE vector2d)
+target_include_directories(${lib_name} PRIVATE ${CMAKE_SOURCE_DIR}/src/include)
