@@ -150,10 +150,11 @@ namespace immutable
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::normalize()
   {
-    if (this->length() != 0)
+    Gtype mag{this->length()};
+    if (mag != 0)
       {
-        this->x /= this->length();
-        this->y /= this->length();
+        this->x /= mag;
+        this->y /= mag;
       }
     else
       {
@@ -193,18 +194,20 @@ namespace immutable
   template <class Gtype>
   void vector2d<Gtype>::rotate(const double& theta)
   {
-    this->x = this->x * cos(theta) - this->y * sin(theta);
-    this->y = this->x * sin(theta) + this->y * cos(theta);
+    Gtype x_value = (this->x * cos(theta)) - (this->y * sin(theta));
+    Gtype y_value = (this->x * sin(theta)) + (this->y * cos(theta));
+    this->set_x(x_value);
+    this->set_y(y_value);
   }
   //! this is the method to find the projection of vector on a normal vector in
   //! 2d space
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::projection(const vector2d<Gtype>& v)
   {
-    this->x =
-        (this->dot(v) / (pow(v.get_x(), 2) + pow(v.get_y(), 2))) * v.get_x();
-    this->y =
-        (this->dot(v) / (pow(v.get_x(), 2) + pow(v.get_y(), 2))) * v.get_y();
+    Gtype dot_value = this->dot(v);
+    Gtype mag_value = v.get_x() * v.get_x() + v.get_y() * v.get_y();
+    this->x = dot_value * v.get_x() / mag_value;
+    this->y = dot_value * v.get_y() / mag_value;
     return (*this);
   }
   //! this is the method to update the position of a vector in 2d space
