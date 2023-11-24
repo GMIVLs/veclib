@@ -167,7 +167,7 @@ namespace immutable
   template <class Gtype>
   bool vector2d<Gtype>::is_normalized()
   {
-    if (this->length() == 1)
+    if (std::round(this->length()) == 1)
       return true;
 
     return false;
