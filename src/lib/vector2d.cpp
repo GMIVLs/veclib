@@ -178,16 +178,16 @@ namespace immutable
   vector2d<Gtype> vector2d<Gtype>::reflect(const vector2d<Gtype>& v)
   {
     vector2d<Gtype> vect{this->projection(v)};
-    return vector2d<Gtype>(vect.multi(2) - (*this));
+    return vector2d<Gtype>(this->sub(vect.multi(2)));
   }
   //! this is the method to find the distance between a point(p1,p2) and vector
   //! in 2d space
   template <class Gtype>
   Gtype vector2d<Gtype>::distance_to(const Gtype& x1, const Gtype& y1)
   {
-    Gtype numerator =
-        std::abs((x1 - this->x) * this->y - (y1 - this->y) * this->x);
-    return (numerator / this->length());
+    this->x = x1 - this->x;
+    this->y = y1 - this->y;
+    return (this->length());
   }
   //! this is the method to find the rotation of vector about an angle in vector
   //! in 2d space
