@@ -19,7 +19,8 @@
 //! the class vector2d contain namespace called immutable, which mean when used
 //! any method the return will be a new vector object not update the called
 //! object.
-namespace immutable
+
+namespace mutable
 {
 
   //! this the definition of templated type class which get Gtype data.
@@ -89,5 +90,5 @@ namespace immutable
    private:
     //! code here
   };
-}  // namespace immutable
+}  // namespace mutable
 #endif  // _VECTOR_2D_H_

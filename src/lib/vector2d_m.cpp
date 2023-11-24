@@ -1,4 +1,4 @@
-#include "vector2d.h"
+#include "vector2d_m.h"
 
 #include <cmath>
 #include <iostream>
@@ -6,7 +6,7 @@
 #include "vector.h"
 
 //! This is the class immutable vector in 2d space, contain basic vector algebra
-namespace immutable
+namespace mutable
 {
 
   //! this is default class constructor implementation, which create object of
@@ -218,7 +218,7 @@ namespace immutable
     this->y = y1;
     return (*this);
   }
-}  // namespace immutable
+}  // namespace mutable
    //! this is the template class instantiation for various primitive data (int,
    //! float, and double)
 template class immutable::vector2d<double>;
