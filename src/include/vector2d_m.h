@@ -1,28 +1,29 @@
 /**
  *
- * @file vector2d.h
+ * @file vector2d_m.h
  * this header file is contain basic
  * math algebra of vector in 2d space
  * which is part of the graphic engine
  * this file contain class named vector2d
  * will inherit the class vector from
- * the vector.h
+ * the vector.h this class will mutable
+ * to change the properties of the class.
  * it's templated type class can accept
  * various type of primitive data, like
  * integer, float, double.
  */
 
-#ifndef _VECTOR_2D_H_
-#define _VECTOR_2D_H_
+#ifndef _VECTOR_2D_M_H_
+#define _VECTOR_2D_M_H_
 
 #include "vector.h"
-//! the class vector2d contain namespace called immutable, which mean when used
-//! any method the return will be a new vector object not update the called
+
+//! the class vector2d contain namespace called mutabl, which mean when used
+//! any method the return will be the same vector object, updated the called
 //! object.
 
-namespace mutable
+namespace mutabl
 {
-
   //! this the definition of templated type class which get Gtype data.
   template <class Gtype>
   //! the class vector2d inherit from the base class vector
@@ -90,5 +91,5 @@ namespace mutable
    private:
     //! code here
   };
-}  // namespace mutable
-#endif  // _VECTOR_2D_H_
+}  // namespace mutabl
+#endif  // _VECTOR_2D_M_H_

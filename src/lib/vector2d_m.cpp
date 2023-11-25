@@ -6,7 +6,7 @@
 #include "vector.h"
 
 //! This is the class immutable vector in 2d space, contain basic vector algebra
-namespace mutable
+namespace mutabl
 {
 
   //! this is default class constructor implementation, which create object of
@@ -36,28 +36,36 @@ namespace mutable
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator+(vector2d<Gtype>& v)
   {
-    return vector2d<Gtype>(this->x + v.x, this->y + v.y);
+    this->x += v.x;
+    this->y += v.y;
+    return (*this);
   }
   //! this is the operator- overload, which take object by reference and
   //! subtract it from (this) and return new vector2d
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator-(vector2d<Gtype>& v)
   {
-    return vector2d<Gtype>(this->x - v.x, this->y - v.y);
+    this->x -= v.x;
+    this->y -= v.y;
+    return (*this);
   }
   //! this is the operator* overload, which take var with Gtype and return
   //! object of type vector2d
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator*(Gtype& scalier)
   {
-    return vector2d<Gtype>(this->x * scalier, this->y * scalier);
+    this->x *= scalier;
+    this->y *= scalier;
+    return (*this);
   }
   //! this is the operator/ overload, which take var of type Gtype and return a
   //! vector2d object
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::operator/(Gtype& scalier)
   {
-    return vector2d<Gtype>(this->x / scalier, this->y / scalier);
+    this->x /= scalier;
+    this->y /= scalier;
+    return (*this);
   }
   //! this is the operator+= overload, which take object of type vector2d added
   //! to (this) and return new vector2d
@@ -108,31 +116,41 @@ namespace mutable
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::add(const vector2d<Gtype>& v)
   {
-    return vector2d<Gtype>(this->x + v.x, this->y + v.y);
+    this->x += v.x;
+    this->y += v.y;
+    return (*this);
   }
 
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::sub(const vector2d<Gtype>& v)
   {
-    return vector2d<Gtype>(this->x - v.x, this->y - v.y);
+    this->x -= v.x;
+    this->y -= v.y;
+    return (*this);
   }
 
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::multi(const Gtype& scaler)
   {
-    return vector2d<Gtype>(this->x * scaler, this->y * scaler);
+    this->x *= scaler;
+    this->y *= scaler;
+    return (*this);
   }
 
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::divide(const Gtype& scaler)
   {
-    return vector2d<Gtype>(this->x / scaler, this->y / scaler);
+    this->x /= scaler;
+    this->y /= scaler;
+    return (*this);
   }
 
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::divide(const vector2d<Gtype>& v)
   {
-    return vector2d<Gtype>(this->x / v.x, this->y / v.y);
+    this->x /= v.x;
+    this->y /= v.y;
+    return (*this);
   }
 
   template <class Gtype>
@@ -178,7 +196,8 @@ namespace mutable
   vector2d<Gtype> vector2d<Gtype>::reflect(const vector2d<Gtype>& v)
   {
     vector2d<Gtype> vect{this->projection(v)};
-    return vector2d<Gtype>(this->sub(vect.multi(2)));
+    this->sub(vect.multi(2));
+    return (*this);
   }
   //! this is the method to find the distance between a point(p1,p2) and vector
   //! in 2d space
@@ -218,9 +237,9 @@ namespace mutable
     this->y = y1;
     return (*this);
   }
-}  // namespace mutable
+}  // namespace mutabl
    //! this is the template class instantiation for various primitive data (int,
    //! float, and double)
-template class immutable::vector2d<double>;
-template class immutable::vector2d<float>;
-template class immutable::vector2d<int>;
+template class mutabl::vector2d<double>;
+template class mutabl::vector2d<float>;
+template class mutabl::vector2d<int>;
