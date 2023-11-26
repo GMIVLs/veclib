@@ -2,8 +2,8 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Project Name and Version
-project(Vector_librar VERSION 1.0.0
-                      DESCRIPTION "Basic Vector Algebra with cpp"
+project(Vector2dLib   VERSION 1.0.0
+                      DESCRIPTION "Basic Vector Algebra Library Created With C++"
                       LANGUAGES CXX)
 
 # Define the Library Name
@@ -23,4 +23,4 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_library(${lib_name} STATIC ${SOURCES})
 
 # Specify the .h source director for the library
-target_include_directories(${lib_name} PRIVATE ${CMAKE_SOURCE_DIR}/src/include)
+target_include_directories(${lib_name} PUBLIC ${CMAKE_SOURCE_DIR}/src/include)
