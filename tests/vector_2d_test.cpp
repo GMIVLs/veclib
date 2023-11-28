@@ -2,9 +2,9 @@
 
 #include <gtest/gtest.h>
 
-#include "../build/Release/include/vector.h"
-#include "../build/Release/include/vector2d.h"
-#include "../build/Release/include/vector2d_m.h"
+#include "vector.h"
+#include "vector2d.h"
+#include "vector2d_m.h"
 
 //! Test function for the vector2d methods and math library
 

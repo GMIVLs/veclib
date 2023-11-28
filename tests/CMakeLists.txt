@@ -30,6 +30,7 @@ enable_testing()  # Enable testing in this directory
 
 # Define the test executable
 add_executable(${name} ${src})
+target_include_directories(${name} PUBLIC ${include})
 
 # Link the test executable with necessary libraries or targets
 target_link_libraries(${name} PRIVATE gtest_main)
@@ -39,5 +40,5 @@ target_link_libraries(${name} PRIVATE ${lib_path}/vector2d)
 add_test(
   NAME Vector_creation              # Name of the test case
   COMMAND ${name}        # Command to run the test
-  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/test  # Set the working directory
+  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}  # Set the working directory
 )
