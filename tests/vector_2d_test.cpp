@@ -9,11 +9,19 @@
 //! Test function for the vector2d methods and math library
 
 //! Vector2d Creation Test with double values
-TEST(MyVectorLib, Vector_creation)
+TEST(MyVectorLib, Vector_Double)
 {
   immutable::vector2d<double> vect{1.0, 1.0};
   EXPECT_DOUBLE_EQ(vect.get_x(), 1.0);
   EXPECT_DOUBLE_EQ(vect.get_y(), 1.0);
+}
+
+//! Vector2d Creation Test with int values
+TEST(MyVectorLib, Vector_Int)
+{
+  immutable::vector2d<int> vect{5, 5};
+  EXPECT_EQ(vect.get_x(), 5);
+  EXPECT_EQ(vect.get_y(), 5);
 }
 
 //! Vector2d addition test
