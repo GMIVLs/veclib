@@ -48,3 +48,8 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/include
   DESTINATION ${CMAKE_BINARY_DIR}/$<CONFIG>
   FILES_MATCHING PATTERN "*.h"
 )
+
+# Check for Test command To enable the sub-directory
+#if(BUILD_TESTING)
+#  add_subdirectory(tests)
+#endif()
