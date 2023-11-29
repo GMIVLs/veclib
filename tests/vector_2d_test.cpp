@@ -33,6 +33,30 @@ TEST(MyVectorLib, Vector_add)
   EXPECT_DOUBLE_EQ(((v1.add(v2)).get_y()), (3.0));
 }
 
+//! Add test for the is_active method of vector 2d
+TEST(MyVectorLib, Vector_is_active)
+{
+  immutable::vector2d<double> v1{4.0, 4.0};
+  v1.set_active(true);
+  EXPECT_TRUE(v1.is_active());
+}
+
+//! Add test for vectors dot product for double values
+TEST(MyVectorLib, Vector_dot_double)
+{
+  immutable::vector2d<double> v1{2.0, 2.0};
+  immutable::vector2d<double> v2{3.0, 3.0};
+  EXPECT_DOUBLE_EQ(v1.dot(v2), 12.0);
+}
+
+//! Add test for vectors dot product for int values
+TEST(MyVectorLib, Vector_dot_int)
+{
+  immutable::vector2d<int> v1{1, 1};
+  immutable::vector2d<int> v2{2, 2};
+  ASSERT_EQ(v1.dot(v2), 4) << "error in integer dot product";
+}
+
 int main(int argc, char** argv)
 {
   ;
