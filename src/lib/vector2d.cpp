@@ -144,7 +144,9 @@ namespace immutable
   template <class Gtype>
   Gtype vector2d<Gtype>::length()
   {
-    return sqrt(pow(this->x, 2) + pow(this->y, 2));
+    Gtype mag{};
+    mag = std::round(sqrt(pow(this->x, 2) + pow(this->y, 2)) * 100) / 100;
+    return mag;
   }
   //! this is the method to find normal to the vector
   template <class Gtype>
