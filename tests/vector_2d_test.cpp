@@ -33,6 +33,27 @@ TEST(MyVectorLib, Vector_add)
   EXPECT_DOUBLE_EQ(((v1.add(v2)).get_y()), (3.0));
 }
 
+//! add subtract function of vectors
+TEST(MyVectorLib, Vector_sub_double)
+{
+  immutable::vector2d<double> v1{3.0, 3.0};
+  immutable::vector2d<double> v2{1.0, 1.0};
+  immutable::vector2d<double> v;
+  v = v1.sub(v2);
+  EXPECT_EQ(v.get_x(), 2.0);
+  EXPECT_EQ(v.get_y(), 2.0);
+}
+
+//! add subtract function of vectors
+TEST(MyVectorLib, Vector_sub_int)
+{
+  immutable::vector2d<int> v1{3, 3};
+  immutable::vector2d<int> v2{1, 1};
+  immutable::vector2d<int> v;
+  v = v1.sub(v2);
+  EXPECT_EQ(v.get_x(), 2);
+  EXPECT_EQ(v.get_y(), 2);
+}
 //! Add test for the is_active method of vector 2d
 TEST(MyVectorLib, Vector_is_active)
 {
@@ -62,7 +83,7 @@ TEST(MyVectorLib, Vector_Length_double)
 {
   immutable::vector2d<double> v1{2.0, 2.0};
   std::cout << "Vector Length is: " << v1.length() << std::endl;
-  ASSERT_DOUBLE_EQ(v1.length(), 2.82) << "Error in Vector Length";
+  ASSERT_DOUBLE_EQ(v1.length(), 2.83) << "Error in Vector Length";
 }
 
 //! add test function for vector length with int values
