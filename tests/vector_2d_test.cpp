@@ -57,6 +57,21 @@ TEST(MyVectorLib, Vector_dot_int)
   ASSERT_EQ(v1.dot(v2), 4) << "error in integer dot product";
 }
 
+//! add test function for vector length with double values
+TEST(MyVectorLib, Vector_Length_double)
+{
+  immutable::vector2d<double> v1{2.0, 2.0};
+  std::cout << "Vector Length is: " << v1.length() << std::endl;
+  ASSERT_DOUBLE_EQ(v1.length(), 2.82) << "Error in Vector Length";
+}
+
+//! add test function for vector length with int values
+TEST(MyVectorLib, Vector_length_int)
+{
+  immutable::vector2d<int> v1{1, 1};
+  ASSERT_EQ(v1.length(), 1);
+}
+
 int main(int argc, char** argv)
 {
   ;
