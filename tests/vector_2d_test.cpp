@@ -93,6 +93,14 @@ TEST(MyVectorLib, Vector_length_int)
   ASSERT_EQ(v1.length(), 1);
 }
 
+//! add test function of scalar multiplication
+TEST(MyVectorLib, Vector_Multi)
+{
+  immutable::vector2d<double> v1{1.0, 1.0};
+  EXPECT_DOUBLE_EQ((v1.multi(5.0).get_x()), 5.0);
+  EXPECT_DOUBLE_EX((v1.multi(5.0).get_y()), 5.0);
+}
+
 int main(int argc, char** argv)
 {
   ;
