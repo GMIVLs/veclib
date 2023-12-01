@@ -266,6 +266,28 @@ TEST(MyVectorLib, Vector_operator_minus)
   ASSERT_EQ(v1.get_y(), -6) << "Error in y-value integer";
 }
 
+//! add test function for the mutable::vector2d for the operator / for double
+TEST(MyVectorLib, Vector_operator_divde_double)
+{
+  vector2d<double> v1{4.0, 6.0};
+  double scalar{2.0};
+  vector2d<double> result;
+  result = v1 / scalar;
+  EXPECT_DOUBLE_EQ(v1.get_x(), 2.0);
+  EXPECT_DOUBLE_EQ(v1.get_y(), 3.0);
+}
+
+//! add test function for the mutable::vector2d for the operator / for integer
+TEST(MyVectorLib, Vector_operator_divide_integer)
+{
+  vector2d<int> v1{5, 3};
+  vector2d<int> result;
+  int scalar{2};
+  result = v1 / scalar;
+  ASSERT_EQ(v1.get_x(), 2);
+  ASSERT_EQ(v1.get_y(), 1);
+}
+
 int main(int argc, char** argv)
 {
   ;
