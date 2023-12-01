@@ -155,8 +155,8 @@ namespace immutable
     Gtype mag{this->length()};
     if (mag != 0)
       {
-        this->x /= mag;
-        this->y /= mag;
+        this->x = std::round((this->x / mag) * 1000) / 1000;
+        this->y = std::round((this->y / mag) * 1000) / 1000;
       }
     else
       {
@@ -198,8 +198,8 @@ namespace immutable
   {
     Gtype x_value = (this->x * cos(theta)) - (this->y * sin(theta));
     Gtype y_value = (this->x * sin(theta)) + (this->y * cos(theta));
-    this->set_x(x_value);
-    this->set_y(y_value);
+    this->set_x(std::round(x_value * 1000) / 1000);
+    this->set_y(std::round(y_value * 1000) / 1000);
   }
   //! this is the method to find the projection of vector on a normal vector in
   //! 2d space
