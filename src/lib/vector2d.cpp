@@ -179,8 +179,9 @@ namespace immutable
   template <class Gtype>
   vector2d<Gtype> vector2d<Gtype>::reflect(const vector2d<Gtype>& v)
   {
+    vector2d<Gtype> copy_original{this->x, this->y};
     vector2d<Gtype> vect{this->projection(v)};
-    return vector2d<Gtype>(this->sub(vect.multi(2)));
+    return vector2d<Gtype>(copy_original.sub(vect.multi(2)));
   }
   //! this is the method to find the distance between a point(p1,p2) and vector
   //! in 2d space
@@ -198,8 +199,10 @@ namespace immutable
   {
     Gtype x_value = (this->x * cos(theta)) - (this->y * sin(theta));
     Gtype y_value = (this->x * sin(theta)) + (this->y * cos(theta));
-    this->set_x(std::round(x_value * 1000) / 1000);
-    this->set_y(std::round(y_value * 1000) / 1000);
+    Gtype x_round = std::round(x_value * 1000) / 1000;
+    Gtype y_round = std::round(y_value * 1000) / 1000;
+    this->set_x(x_round);
+    this->set_y(y_round);
   }
   //! this is the method to find the projection of vector on a normal vector in
   //! 2d space
