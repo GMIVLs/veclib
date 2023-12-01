@@ -13,8 +13,9 @@
 
 //! the class vector basic definition, used as a base class for the class
 //! vector2d & vector3d contain vector math algebra
+#include <iomanip>
+#include <ios>
 #include <ostream>
-
 //! Generic class definition of type Gtype
 template <class Gtype>
 class vector
@@ -24,9 +25,11 @@ class vector
   friend std::ostream& operator<<(std::ostream& os, const vector& v)
   {
     if (v.verbose)
-      os << "Vector:[" << v.id << "] " << v.get_x() << "i+" << v.get_y() << "j";
+      os << std::fixed << std::setprecision(2) << "Vector:[" << v.id << "] "
+         << v.get_x() << "i+" << v.get_y() << "j";
     else
-      os << "Vector:[" << v.id << "] <" << v.get_x() << "," << v.get_y() << ">";
+      os << std::fixed << std::setprecision(2) << "Vector:[" << v.id << "] <"
+         << v.get_x() << "," << v.get_y() << ">";
     return os;
   }
 

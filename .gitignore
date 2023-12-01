@@ -28,6 +28,7 @@ main.cpp
 # Build directory
 build/
 bin/
+tests/bin
 
 # CMake build directory
 CMakeFiles/
