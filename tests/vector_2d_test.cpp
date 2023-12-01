@@ -93,13 +93,133 @@ TEST(MyVectorLib, Vector_length_int)
   ASSERT_EQ(v1.length(), 1);
 }
 
-//! add test function of scalar multiplication
-TEST(MyVectorLib, Vector_Multi)
+//! add test function of scalar multiplication double values
+TEST(MyVectorLib, Vector_Multi_double)
 {
   immutable::vector2d<double> v1{1.0, 1.0};
   EXPECT_DOUBLE_EQ((v1.multi(5.0).get_x()), 5.0);
   EXPECT_DOUBLE_EQ((v1.multi(5.0).get_y()), 5.0);
 }
+
+//! add test function for vectors multi integer values
+TEST(MyVectorLib, Vector_Multi_int)
+{
+  immutable::vector2d<int> v1{2, 2};
+  EXPECT_EQ((v1.multi(3)).get_x(), 6);
+  EXPECT_EQ((v1.multi(3)).get_y(), 6);
+}
+
+//! add test function for vectors division double values
+TEST(MyVectorLib, Vector_divide_double)
+{
+  immutable::vector2d<double> v1{4.0, 4.0};
+  immutable::vector2d<double> v2{2.0, 2.0};
+  EXPECT_DOUBLE_EQ((v1.divide(v2)).get_x(), 2.0);
+  EXPECT_DOUBLE_EQ((v1.divide(v2)).get_y(), 2.0);
+}
+
+//! add test function for vectors divided integer values
+TEST(MyVectorLib, Vector_divide_int)
+{
+  immutable::vector2d<int> v1{10, 10};
+  immutable::vector2d<int> v2{3, 3};
+  ASSERT_EQ((v1.divide(v2)).get_x(), 3)
+      << "Error in Division of Integer values";
+  ASSERT_EQ((v1.divide(v2)).get_y(), 3);
+}
+
+//! add test function for vector rotate 90 degree double values
+TEST(MyVectorLib, Vector_rotate90_double)
+{
+  immutable::vector2d<double> v1{2.0, 2.0};
+  v1.rotate(1.5708);
+  EXPECT_DOUBLE_EQ(v1.get_x(), -2.0);
+  EXPECT_DOUBLE_EQ(v1.get_y(), 2.0);
+}
+
+//! add test function for vector rotate 90 degree with integer values
+TEST(MyVectorLib, Vector_rotate90_int)
+{
+  immutable::vector2d<int> v1{3, 3};
+  v1.rotate(1.5708);
+  ASSERT_EQ(v1.get_x(), -3) << "Error in vector rotation of integer type";
+  ASSERT_EQ(v1.get_y(), 3);
+}
+
+//! add test function for vector normalize double values
+TEST(MyVectorLib, Vector_normalize_double)
+{
+  immutable::vector2d<double> v1{2.5, 2.5};
+  EXPECT_DOUBLE_EQ((v1.normalize()).get_x(), 0.706);
+  EXPECT_DOUBLE_EQ((v1.normalize()).get_y(), 0.706);
+}
+
+//! add test function for vector normalize integer values
+TEST(MyVectorLib, Vector_normalize_integer)
+{
+  immutable::vector2d<int> v1{5, 5};
+  ASSERT_EQ((v1.normalize()).get_x(), 0) << "Error in Integer Values";
+  ASSERT_EQ((v1.normalize()).get_y(), 0) << " Error in y Value";
+}
+
+//! add test function for test vector is normalize or not double values
+TEST(MyVectorLib, Vector_is_normalize_double)
+{
+  immutable::vector2d<double> v1{3.5, 3.5};
+  EXPECT_TRUE((v1.normalize()).is_normalized());
+}
+
+//! add test function for test vector is normalize or not integer values
+TEST(MyVectorLib, Vector_is_normalize_int)
+{
+  immutable::vector2d<int> v1{10, 10};
+  EXPECT_TRUE((v1.normalize()).is_normalized());
+}
+
+//! add test function for test position update of vector double values
+TEST(MyVectorLib, Vector_update_double)
+{
+  immutable::vector2d<double> v1{1.0, 1.0};
+  v1.update(10.5, 10.5);
+  EXPECT_DOUBLE_EQ(v1.get_x(), 10.5);
+  EXPECT_DOUBLE_EQ(v1.get_y(), 10.5);
+}
+
+//! add test function for test position update of vector with integer values
+TEST(MyVectorLib, Vector_update_integer)
+{
+  immutable::vector2d<int> v1{3, 3};
+  v1.update(50, 50);
+  ASSERT_EQ(v1.get_x(), 50) << "Error in x value of integer";
+  ASSERT_EQ(v1.get_y(), 50) << "Error in y value of integer";
+}
+
+//! add test function for test vector reflect on another vector double values
+TEST(MyVectorLib, Vector_reflect_double)
+{
+  immutable::vector2d<double> v1{2.0, 2.0};
+  immutable::vector2d<double> v2{6.0, 6.0};
+  EXPECT_DOUBLE_EQ((v1.reflect(v2)).get_x(), -4.0);
+  EXPECT_DOUBLE_EQ((v1.reflect(v2)).get_y(), -4.0);
+}
+
+//! add test function for test vector reflect on another vector integer values
+TEST(MyVectorLib, Vector_reflect_int)
+{
+  immutable::vector2d<int> v1{1, 1};
+  immutable::vector2d<int> v2{3, 3};
+  ASSERT_EQ((v1.reflect(v2)).get_x(), -2) << "Error in x value";
+  ASSERT_EQ((v1.reflect(v2)).get_y(), -2) << "Error in y value";
+}
+
+//! add test function for find the distance from vector to a point double values
+TEST(MyVectorLib, Vector_distance_to_double)
+{
+  immutable::vector2d<double> v1{3.5, 4.5};
+  EXPECT_DOUBLE_EQ(v1.distance_to(7.5, 7.5), 5.0);
+}
+
+//! add test function for vector projection on another vector double values
 
 int main(int argc, char** argv)
 {
