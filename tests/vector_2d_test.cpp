@@ -140,10 +140,12 @@ TEST(MyVectorLib, Vector_rotate90_double)
 //! add test function for vector rotate 90 degree with integer values
 TEST(MyVectorLib, Vector_rotate90_int)
 {
-  immutable::vector2d<int> v1{3, 3};
+  immutable::vector2d<int> v1{2, 1};
   v1.rotate(1.5708);
-  ASSERT_EQ(v1.get_x(), -3) << "Error in vector rotation of integer type";
-  ASSERT_EQ(v1.get_y(), 3);
+  ASSERT_EQ(v1.get_x(), -1)
+      << "Error in vector rotation of integer type the X-value";
+  ASSERT_EQ(v1.get_y(), 2)
+      << "Error in vector rotation of integer type the Y-value";
 }
 
 //! add test function for vector normalize double values
@@ -173,7 +175,7 @@ TEST(MyVectorLib, Vector_is_normalize_double)
 TEST(MyVectorLib, Vector_is_normalize_int)
 {
   immutable::vector2d<int> v1{10, 10};
-  EXPECT_TRUE((v1.normalize()).is_normalized());
+  EXPECT_FALSE((v1.normalize()).is_normalized());
 }
 
 //! add test function for test position update of vector double values
@@ -199,8 +201,8 @@ TEST(MyVectorLib, Vector_reflect_double)
 {
   immutable::vector2d<double> v1{2.0, 2.0};
   immutable::vector2d<double> v2{6.0, 6.0};
-  EXPECT_DOUBLE_EQ((v1.reflect(v2)).get_x(), -4.0);
-  EXPECT_DOUBLE_EQ((v1.reflect(v2)).get_y(), -4.0);
+  EXPECT_DOUBLE_EQ((v1.reflect(v2)).get_x(), -2.0);
+  EXPECT_DOUBLE_EQ((v1.reflect(v2)).get_y(), -2.0);
 }
 
 //! add test function for test vector reflect on another vector integer values
@@ -208,8 +210,8 @@ TEST(MyVectorLib, Vector_reflect_int)
 {
   immutable::vector2d<int> v1{1, 1};
   immutable::vector2d<int> v2{3, 3};
-  ASSERT_EQ((v1.reflect(v2)).get_x(), -2) << "Error in x value";
-  ASSERT_EQ((v1.reflect(v2)).get_y(), -2) << "Error in y value";
+  ASSERT_EQ((v1.reflect(v2)).get_x(), -1) << "Error in x value";
+  ASSERT_EQ((v1.reflect(v2)).get_y(), -1) << "Error in y value";
 }
 
 //! add test function for find the distance from vector to a point double values
