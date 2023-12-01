@@ -222,6 +222,49 @@ TEST(MyVectorLib, Vector_distance_to_double)
 }
 
 //! add test function for vector projection on another vector double values
+TEST(MyVectorLib, Vector_projection_double)
+{
+  immutable::vector2d<double> v1{1.0, 1.0};
+  immutable::vector2d<double> v2{2.0, 2.0};
+  immutable::vector2d<double> result;
+  result = v1.projection(v2);
+  EXPECT_DOUBLE_EQ(result.get_x(), 1.0);
+  EXPECT_DOUBLE_EQ(result.get_y(), 1.0);
+}
+
+//! add test function for vector projection on another vector integer values
+TEST(MyVectorLib, Vector_projection_integer)
+{
+  immutable::vector2d<int> v1{3, 3};
+  immutable::vector2d<int> v2{6, 6};
+  immutable::vector2d<int> result;
+  result = v1.projection(v2);
+  ASSERT_EQ(result.get_x(), 3) << "Error in the projection x-value integer";
+  ASSERT_EQ(result.get_y(), 3) << "Error in the projection y-value integer";
+}
+
+//! add test function for the mutable::vector2d for the operator + double values
+TEST(MyVectorLib, Vector_operator_plus)
+{
+  vector2d<double> v1{1.5, -2.5};
+  vector2d<double> v2{3.5, 4.0};
+  vector2d<double> result;
+  result = v1 + v2;
+  EXPECT_DOUBLE_EQ(result.get_x(), 5.0);
+  EXPECT_DOUBLE_EQ(result.get_y(), 1.5);
+}
+
+//! add test function for the mutable::vector2d for the operator - integer
+//! values
+TEST(MyVectorLib, Vector_operator_minus)
+{
+  vector2d<int> v1{1, 4};
+  vector2d<int> v2{4, 10};
+  vector2d<int> result;
+  result = v1 - v2;
+  ASSERT_EQ(v1.get_x(), -3) << "Error in x-value integer";
+  ASSERT_EQ(v1.get_y(), -6) << "Error in y-value integer";
+}
 
 int main(int argc, char** argv)
 {
