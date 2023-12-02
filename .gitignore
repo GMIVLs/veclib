@@ -36,7 +36,7 @@ CMakeCache.txt
 CMakeScripts/
 cmake_install.cmake
 CTestTestfile.cmake
-Makefile
+#Makefile
 #CMakeLists.txt
 
 # IDE-specific files
@@ -67,3 +67,4 @@ src/logs/
 lib_docs/latex
 lib_docs/html
 .cache/clangd/index
+tests/test
