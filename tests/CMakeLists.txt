@@ -34,7 +34,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Find the required library package
-find_package(GTest REQUIRED)
+#find_package(GTest REQUIRED)
 
 #enable_testing()  # Enable testing in this directory
 
