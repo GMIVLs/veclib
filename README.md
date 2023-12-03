@@ -14,8 +14,11 @@ This repository contains a simple C++ implementation of a 2D vector math library
 
 To build and use this library, you'll need:
 
-- CMake (version 3.0 or higher)
-- C++ compiler supporting C++17 or later
+- CMake (version 3.20 or higher).
+- C++ compiler supporting C++17 or later.
+- Doxygen (version 1.9 or higher).
+- Google-test Framework.
+- Ctest (version 3.20 or higher).
 
 ## Build Instructions
 
@@ -23,39 +26,32 @@ Follow these steps to build the static library using CMake:
 
 1. Clone this repository:
     ```git
+
     git clone https://github.com/GMIVLs/veclib
 
-2. there is two method to make the file:
-  
-    a-1. Create a build directory inside the cloned repository:
-   
     ```
-    mkdir build
-    cd build
-    ```
-
-    a-2 Create the Makefile and required files for build the library
-    
-    ```
-    cmake ..
-    make
-    ```
-
-    b-1 use the cmake to create and build the binary
-    
-    ```
-    cmake -B build
-    ```
-
-    b-2 use the cmake with Flags to build the binary
-    
-    ```
-    cmake --build build -DCMAKE_BUILD_TYPE=release
-    ```
-
-3. You can use the library named (libvector2d.a) in your work, for details and information about the methods, classes, and operators overload refere to the uml diagram and ( [vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md) ) files.
-
-4. Use the the ___dconfig___ file to generate the libray documents in the lib_docs directory:
-    ```
-    doxygen dconfig
-    ```
+2. Install c++ compiler (clang, gcc, g++, msvc, ..etc.).
+3. Install cmake, the package contains ctest, and cpack.
+4. Install doxygen, which will generate the helps documents.
+5. Use the following instruction to build the library:
+   5-a: use make help for helping instructions:
+       ```sh
+       make help
+       ```
+   5-b: use make all for build and install and compile the library:
+       ```sh
+       make all
+       ```
+   5-c: use make test to run the google tests on the methods of the library
+       ```sh
+       make test
+       ```
+   5-d: use make doc to build the doxy files and run lib_docs/html/index.html
+       ```sh
+       make doc
+       ```
+   5-e: use make clean to clean the built files:
+       ```sh
+       make clean
+       ```
+6. You can use the library named (libvector2d.a) which is installed in the directory build/Release in your work, for details and information about the methods, classes, and operators overload refere to the uml diagram and ( [vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md) ) files.
