@@ -31,27 +31,35 @@ Follow these steps to build the static library using CMake:
 
     ```
 2. Install c++ compiler (clang, gcc, g++, msvc, ..etc.).
+
 3. Install cmake, the package contains ctest, and cpack.
+
 4. Install doxygen, which will generate the helps documents.
+
 5. Use the following instruction to build the library:
    5-a: use make help for helping instructions:
-       ```sh
-       make help
-       ```
+   ```
+   make help
+   ```
+
    5-b: use make all for build and install and compile the library:
-       ```sh
-       make all
-       ```
-   5-c: use make test to run the google tests on the methods of the library
-       ```sh
-       make test
-       ```
-   5-d: use make doc to build the doxy files and run lib_docs/html/index.html
-       ```sh
-       make doc
-       ```
+   ```
+   make all
+   ```
+
+   5-c: use make test to run the google tests on the methods of the library:
+   ```
+   make test
+   ```
+
+   5-d: use make doc to build the doxy files and run lib_docs/html/index.html:
+   ```
+   make doc
+   ```
+
    5-e: use make clean to clean the built files:
-       ```sh
-       make clean
-       ```
+   ```
+   make clean
+   ```
+
 6. You can use the library named (libvector2d.a) which is installed in the directory build/Release in your work, for details and information about the methods, classes, and operators overload refere to the uml diagram and ( [vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md) ) files.
