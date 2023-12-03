@@ -37,6 +37,7 @@ Follow these steps to build the static library using CMake:
 4. Install doxygen, which will generate the helps documents.
 
 5. Use the following instruction to build the library:
+   
    5-a: use make help for helping instructions:
    ```
    make help
