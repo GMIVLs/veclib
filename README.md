@@ -1,7 +1,7 @@
 # 2D Vector Math Library
 
 This repository contains a simple C++ implementation of a 2D vector math library that provides functionalities and operators overload for basic vector operations in 2D space, and documentation files for these library.
-
+------
 ## Features
 
 - Operators overloaded (+, -, *, /, +=, -=, *=, /=, and ())
@@ -15,11 +15,16 @@ This repository contains a simple C++ implementation of a 2D vector math library
 To build and use this library, you'll need:
 
 - CMake (version 3.20 or higher).
+  please follow this link for download and install the cmake on your system ([cmake](https://gitlab.kitware.com/cmake/cmake)).
 - C++ compiler supporting C++17 or later.
+  please refere for your system documentation or your IDE for the instructions and version of your c++ compiler and how use it to compile and build your binary.
 - Doxygen (version 1.9 or higher).
+  to install the doxygen please following this link ([Doxygen](https://github.com/doxygen/doxygen)).
 - Google-test Framework.
+  the google test framework will fetched with the build and compile of the vector library.
 - Ctest (version 3.20 or higher).
-
+  the cmake package contains ctest and cpack installed automatically.
+------
 ## Build Instructions
 
 Follow these steps to build the static library using CMake:
@@ -37,7 +42,7 @@ Follow these steps to build the static library using CMake:
 4. Install doxygen, which will generate the helps documents.
 
 5. Use the following instruction to build the library:
-   
+
    5-a: use make help for helping instructions:
    ```
    make help
