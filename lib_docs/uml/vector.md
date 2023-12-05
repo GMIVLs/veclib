@@ -7,3 +7,13 @@ _In figure below the UML of vector class:_
 
 ![class::vector](../img/vector_uml.png)
 
+```lua
++------------------------------+
+|            vector            |
++------------------------------+
+|- x : double                  |
+|- y : double                  |
+|- id: int                     |
+|- verpose: bool               |
++------------------------------+
+```
