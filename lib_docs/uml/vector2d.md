@@ -3,8 +3,9 @@
 In the vector2d library there is many class, one of them is ___vector2d class___ which is the class contain ___basic vector math algebra___. We will use the ___ASCII Diagram___ to make our class diagram alive and modren.
 
 #### Vector2d Class Diagram:
-_In figure below the UML of immutable::vector2d class:_
+_In figure below the UML of vector2d class:_
 
+```lua
 +-----------------------------------------------------------+
 |                  vector2d : public vector                 |
 +-----------------------------------------------------------+
@@ -38,6 +39,7 @@ _In figure below the UML of immutable::vector2d class:_
 | + projection(vector2d<Gtype>&): vector2d<Gtype>           |
 | + update(double&,double&): vector2d<Gtype>                |
 +-----------------------------------------------------------+
+```
 
 #### Vector2d Class Brief:
 
