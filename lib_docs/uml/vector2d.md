@@ -84,5 +84,5 @@ _In figure below the UML of vector2d class:_
   - rotate: this method is used to rotate the vector object by a given angle (theta) counter clockwise.
   - projection: this method is used to find the projection of vector on another vector object.
   - update: this method is used to update the position of a vector to another one.
-
-    As i mentioned earlier this class inherited from the class vector. This class has two version can be used in vector algebra one is update the fileds of the caller object which is ___(vector2d)___, and the other one just return a new vector object which is ___(immutable::vector2d)___, so you can use both of them interchangable in your work as needed according to problem you may need our library to simplify.
+------
+As i mentioned earlier this class inherited from the class vector. This class has two version can be used in vector algebra one is update the fileds of the caller object which is ___(vector2d)___, and the other one just return a new vector object which is ___(immutable::vector2d)___, so you can use both of them interchangable in your work as needed according to problem you may need our library to simplify.
