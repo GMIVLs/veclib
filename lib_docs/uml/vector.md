@@ -8,12 +8,30 @@ _In figure below the UML of vector class:_
 ![class::vector](../img/vector_uml.png)
 
 ```lua
-+------------------------------+
-|            vector            |
-+------------------------------+
-|- x : double                  |
-|- y : double                  |
-|- id: int                     |
-|- verpose: bool               |
-+------------------------------+
++-----------------------------------------+
+|                vector                   |
++-----------------------------------------+
+| - x : double                            |
+| - y : double                            |
+| - id: int                               |
+| - verbose: bool                         |
++-----------------------------------------+
+| + vector() : vector<Gtype>              |
+| + vector(Gtype,Gtype) : vector<Gtype>   |
+| + ~vector() :                           |
++-----------------------------------------+
+| + set_x(Gtype) : void                   |
+| + set_y(Gtype) : void                   |
+| + set_active(bool) : void               |
+| + set_id(int) : void                    |
+|--------------------------               |
+| + get_x() : Gtype                       |
+| + get_y() : Gtype                       |
+| + get_id(): int                         |
+|--------------------------               |
+| + is_active() : bool                    |
+| + display() : void                      |
+|--------------------------               |
+| + operator<<(ostream&,vector&) : vector |
++-----------------------------------------+
 ```
