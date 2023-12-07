@@ -27,6 +27,7 @@ test:
 # make and create the library documents files with doxygen
 doc:
 	doxygen dconfig
+	cd lib_docs/latex && make pdf
 
 # make help, instructions to users
 help:
