@@ -56,7 +56,7 @@ Follow these steps to build the static library using CMake:
    make test
    ```
 
-   6-d: use make doc to build the doxy files and run lib_docs/html/index.html:
+   6-d: use make doc to build the doxy html files in **[lib_docs/html/index.html]**, and pdf manual in **[lib_docs/latex/rfman.pdf]**:
    ```
    make doc
    ```
