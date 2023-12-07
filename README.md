@@ -1,6 +1,6 @@
 # 2D Vector Math Library
 
-This repository contains a simple C++ implementation of a 2D vector math library that provides functionalities and operators overload for basic vector operations in 2D space, and documentation files for these library.
+- This repository contains a simple C++ implementation of a 2D vector math library that provides functionalities and operators overload for basic vector operations in 2D space, and documentation files for these library.
 ------
 ## Features
 
