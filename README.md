@@ -1,6 +1,6 @@
 # 2D Vector Math Library
 
-This repository contains a simple C++ implementation of a 2D vector math library that provides functionalities and operators overload for basic vector operations in 2D space, and documentation files for these library.
+- This repository contains a simple C++ implementation of a 2D vector math library that provides functionalities and operators overload for basic vector operations in 2D space, and documentation files for these library.
 ------
 ## Features
 
@@ -56,7 +56,7 @@ Follow these steps to build the static library using CMake:
    make test
    ```
 
-   6-d: use make doc to build the doxy files and run lib_docs/html/index.html:
+   6-d: use make doc to build the doxy html files in **[lib_docs/html/index.html]**, and pdf manual in **[lib_docs/latex/rfman.pdf]**:
    ```
    make doc
    ```
