@@ -1,41 +1,58 @@
-#pragma once
+#ifndef _LOG_H_
+#define _LOG_H_
 
-#include <ostream>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+
 #define YELLOW "\033[1;33m"
 #define RED "\033[1;31m"
 #define RESET_COLOR "\033[0m"
+#define GREEN "\033[1;32m"
 
-#include <fstream>
-#include <string>
-
-enum class LogLevel
+enum LogLevel
 {
+  TRACE,
+  DEBUG,
   INFO,
   WARNING,
-  ERROR
+  ERROR,
+  CRITICAL,
+  EMERGENCY,
+  FATAL
 };
 
-#define WARN LogLevel::WARNING
+#define DEB LogLevel::DEBUG
 #define INFO LogLevel::INFO
+#define WARN LogLevel::WARNING
 #define ERR LogLevel::ERROR
 
-class Logger
+namespace GMIVLS
 {
- public:
-  // Logger(const std::string&, LogLevel);
-  Logger();
-  ~Logger();
 
-  void setLogLevel(LogLevel);
-  void log(LogLevel, const std::string&);
+  class Logger
+  {
+   public:
+    Logger();
+    ~Logger();
 
-  Logger& operator<<(const std::string&);
-  Logger& operator()(LogLevel&&);
+    void setLogLevel(LogLevel);
+    void log(LogLevel, const std::string&);
 
- private:
-  std::ofstream outputFile;
-  LogLevel logLevel;
+    // Logger& operator()(LogLevel&&);
+    // template <typename T>
+    // Logger& operator<<(const T&);
+#include "operator.tpp"
+   private:
+    std::ofstream outputFile;
+    LogLevel logLevel;
+    std::ostringstream oss;
+    void open_file();
+    void close_file();
+    void writeToLog(const std::string&);
+    std::string getLogLevelString(LogLevel);
+  };
 
-  void writeToLog(const std::string&);
-  std::string getLogLevelString(LogLevel);
-};
+}  // namespace GMIVLS
+#endif  // _LOG_H_
