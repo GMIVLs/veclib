@@ -67,3 +67,13 @@ Follow these steps to build the static library using CMake:
    ```
 
 7. You can use the library named (libvector2d.a) which is installed in the directory build/Release in your work, for details and information about the methods, classes, and operators overload refere to the uml diagram and ( [vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md) ) files.
+
+## Contributing
+contributions, allowed and welcomed to your library:
+
+Contributions are welcome! Fork this repository, make changes, and submit a pull request.
+
+## License
+This library is licensed under the MIT License - see the LICENSE file for details.
+
+
