@@ -1,9 +1,10 @@
     template <typename T>
     Logger& operator<<(const T& value)
     {
-      if (this->logLevel <= LogLevel::FATAL)
+      if (this->logLevel <= FATAL)
         {
           //std::ostringstream oss;
+          oss.str("");
           oss << value;
 
           log(this->logLevel, oss.str());
