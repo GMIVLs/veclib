@@ -23,10 +23,14 @@ enum LogLevel
   FATAL
 };
 
-#define DEB LogLevel::DEBUG
+#define TRACE LogLevel::TRACE
+#define DEBUG LogLevel::DEBUG
 #define INFO LogLevel::INFO
-#define WARN LogLevel::WARNING
-#define ERR LogLevel::ERROR
+#define WARNING LogLevel::WARNING
+#define ERROR LogLevel::ERROR
+#define CRITICAL LogLevel::CRITICAL
+#define EMERGENCY LogLevel::EMERGENCY
+#define FATAL LogLevel::FATAL
 
 namespace GMIVLS
 {
@@ -40,10 +44,8 @@ namespace GMIVLS
     void setLogLevel(LogLevel);
     void log(LogLevel, const std::string&);
 
-    // Logger& operator()(LogLevel&&);
-    // template <typename T>
-    // Logger& operator<<(const T&);
 #include "operator.tpp"
+
    private:
     std::ofstream outputFile;
     LogLevel logLevel;
