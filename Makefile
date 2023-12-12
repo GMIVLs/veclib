@@ -1,4 +1,4 @@
-.PHONY: all build install binary test doc
+.PHONY: all build install binary test doc delete
 
 # Make all will do all the job of building and installing then make the library test
 all: build install binary
@@ -42,3 +42,9 @@ clean:
 	$(MAKE) -C build clean
 	$(MAKE) -C tests/test clean
 	@echo "Cleaned Build Files"
+
+delete:
+	@echo "Delete all building directories"
+	rm -rf tests/test
+	sudo rm -rf build
+	@echo "All done...!"
