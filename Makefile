@@ -31,11 +31,12 @@ doc:
 
 # make help, instructions to users
 help:
-	@echo "Use: (  make all   )------>> to build the library then installed it to build/Release and compile and build the test binary"
-	@echo "Use: (  make test  )------>> to run the google test and check the result"
-	@echo "Use: (  make doc   )------>> to run the doxygen and build the documents file in lib_docs/html/index.html"
-	@echo "Use: (  make clean )------>> to run the clean of the built files"
-	@echo "Use: (  make help  )------>> to run this help instruction"
+	@echo "Use: (  make all     )------>> to build the library then installed it to build/Release and compile and build the test binary"
+	@echo "Use: (  make test    )------>> to run the google test and check the result"
+	@echo "Use: (  make doc     )------>> to run the doxygen and build the documents file in lib_docs/html/index.html"
+	@echo "Use: (  make clean   )------>> to run the clean of the built files"
+  @echo "Use: (  make delete  )------>> to remove all the building directoies"
+	@echo "Use: (  make help    )------>> to run this help instruction"
 
 # do the clean job for the installation directories
 clean:
