@@ -65,6 +65,10 @@ Follow these steps to build the static library using CMake:
    ```
    make clean
    ```
+   6-f: use make delete to remove all building directories:
+   ```
+   make delete
+   ```
 
 7. You can use the library named (libvector2d.a) which is installed in the directory build/Release in your work, for details and information about the methods, classes, and operators overload refere to the uml diagram and ( [vector.md](lib_docs/uml/vector.md), and [vector2d.md](lib_docs/uml/vector2d.md) ) files.
 
