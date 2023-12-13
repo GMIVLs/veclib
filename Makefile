@@ -48,4 +48,5 @@ delete:
 	@echo "Delete all building directories"
 	rm -rf tests/test
 	sudo rm -rf build
+	rm -rf lib_docs/html lib_docs/latex
 	@echo "All done...!"
