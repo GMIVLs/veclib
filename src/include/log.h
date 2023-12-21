@@ -70,9 +70,13 @@ namespace GMIVLS
     std::ofstream outputFile;  //! define output file stream filed
     LogLevel logLevel;         //! define the log level filed
     std::ostringstream oss;    //! define output string stream file
+    //! this method is private used to open the log.txt file for logging record.
     void open_file();
+    //! this method is private used to close the log.txt file.
     void close_file();
+    //! this method is used to write the log message to file and console
     void writeToLog(const std::string&);
+    //! this method used to simple get the log level
     std::string getLogLevelString(LogLevel);
   };
 
