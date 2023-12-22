@@ -1,3 +1,12 @@
+/*
+ * @log.cpp file
+ * this file contain the
+ * implementation of the
+ * logger class for log
+ * message to console and
+ * to file log.txt
+ */
+
 #include "../include/log.h"
 
 #include <cstdlib>
