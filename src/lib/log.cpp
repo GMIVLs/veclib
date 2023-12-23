@@ -20,6 +20,8 @@
 
 namespace GMIVLS
 {
+  //! this is the constructor of logger class, contain try-catch block for open
+  //! the log file
   Logger::Logger()
   {
     try
