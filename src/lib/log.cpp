@@ -48,6 +48,7 @@ namespace GMIVLS
       }
   }
 
+  //! this is the method of simple setter for loglevel
   void Logger::setLogLevel(LogLevel level) { logLevel = level; }
 
   void Logger::log(LogLevel level, const std::string& message)
