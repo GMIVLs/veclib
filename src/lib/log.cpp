@@ -35,7 +35,7 @@ namespace GMIVLS
         std::exit;
       }
   }
-
+  //! this is the destructor, which use the try-catch blocks
   Logger::~Logger()
   {
     try
