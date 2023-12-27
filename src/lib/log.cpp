@@ -1,3 +1,12 @@
+/*
+ * @log.cpp file
+ * this file contain the
+ * implementation of the
+ * logger class for log
+ * message to console and
+ * to file log.txt
+ */
+
 #include "../include/log.h"
 
 #include <cstdlib>
@@ -11,6 +20,8 @@
 
 namespace GMIVLS
 {
+  //! this is the constructor of logger class, contain try-catch block for open
+  //! the log file
   Logger::Logger()
   {
     try
@@ -24,7 +35,7 @@ namespace GMIVLS
         std::exit;
       }
   }
-
+  //! this is the destructor, which use the try-catch blocks
   Logger::~Logger()
   {
     try
@@ -37,6 +48,7 @@ namespace GMIVLS
       }
   }
 
+  //! this is the method of simple setter for loglevel
   void Logger::setLogLevel(LogLevel level) { logLevel = level; }
 
   void Logger::log(LogLevel level, const std::string& message)
